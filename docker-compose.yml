@@ -1,0 +1,16 @@
+services:
+  transmission:
+    image: unixlinuxgeek/transmission
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /mnt/Toshiba1Tb/transmission/downloads:/transmission/downloads
+
+  minidlna:
+    image: unixlinuxgeek/minidlna
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - /mnt/Toshiba1Tb/transmission/downloads:/transmission/downloads
+      - /mnt/Toshiba1Tb/docker/minidlna/minidlna.conf:/etc/minidlna.conf
+
