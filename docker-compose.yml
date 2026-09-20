@@ -4,13 +4,13 @@ services:
     network_mode: host
     restart: unless-stopped
     volumes:
-      - <YOUR-PATH>/transmission/downloads:/transmission/downloads
+      - /home/geek/transmission/downloads:/transmission/downloads
 
   minidlna:
     image: unixlinuxgeek/minidlna
     network_mode: host
     restart: unless-stopped
     volumes:
-      - <YOUR-PATH>/transmission/downloads:/transmission/downloads
-      - <YOUR-PATH>/docker/minidlna/minidlna.conf:/etc/minidlna.conf
+      - /home/geek/transmission/downloads:/transmission/downloads
+      - /home/geek/miniNAS/minidlna/minidlna.conf:/etc/minidlna.conf
 
